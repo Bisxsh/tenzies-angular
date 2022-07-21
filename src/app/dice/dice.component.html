@@ -1,1 +1,3 @@
-<p>dice works!</p>
+<div [ngClass]="'dice--container '+(isHeld ? 'held' : '')" (click)="toggleHoldDice()">
+  {{ value }}
+</div>

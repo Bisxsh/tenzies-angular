@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-dice',
   templateUrl: './dice.component.html',
   styleUrls: ['./dice.component.css']
 })
-export class DiceComponent implements OnInit {
+export class DiceComponent {
 
-  constructor() { }
+  @Input() value !: number;
+  isHeld !: boolean;
 
-  ngOnInit(): void {
+  toggleHoldDice() {
+    this.isHeld = !this.isHeld;
+    console.log(this.isHeld)
   }
 
 }

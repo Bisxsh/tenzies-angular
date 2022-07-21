@@ -1,6 +1,18 @@
 <main>
   <div class="app--container">
-    <h1 class="app--heading">Tenzies</h1>
-    <h3 class="app--description">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</h3>
+    <div>
+      <h1 class="app--heading">Tenzies</h1>
+      <h3 class="app--description">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</h3>
+    </div>
+
+    <span class="app--dice-container">
+        <app-dice
+        *ngFor="let die of dice; index as i"
+        [value] = die
+      ></app-dice>
+    </span>
+
+    <button class="app--button" type="button" >Roll</button>
+
   </div>
 </main>
