@@ -82,6 +82,10 @@
 }
 
 @media only screen and (min-width: 950px) {
+  .app--container{
+    margin: 3vh 3vw;
+    max-width: 45vw;
+  }
   .app--heading {
     font-size: 4rem;
   }

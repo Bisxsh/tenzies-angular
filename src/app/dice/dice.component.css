@@ -23,7 +23,7 @@
     width: 10vw;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1200px) {
   .dice--container{
     width: 8vw;
     font-size: 2rem;
