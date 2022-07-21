@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+  background-color: #0B2434;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  font-family: "Karla", SansSerif, serif;
+  font-weight: 700;
+}

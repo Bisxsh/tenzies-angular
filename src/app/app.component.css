@@ -1,0 +1,22 @@
+.app--container {
+  background: #F5F5F5;
+  border-radius: 10px;
+  margin: 30px 20px 30px 20px;
+  padding: 35px;
+  text-align: center;
+  aspect-ratio: 1 / 1;
+}
+
+.app--heading {
+  margin: 30px 30px 0 30px;
+
+ }
+
+.app--description {
+  font-family: 'Inter', SansSerif, serif;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  margin: 5px 20px 0 20px;
+
+  color: #4A4E74;
+}
