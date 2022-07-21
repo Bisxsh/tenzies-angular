@@ -27,6 +27,16 @@ export class AppComponent implements OnInit{
     }
   }
 
+  dieHeldChanged(data: any) {
+    const { id } = data;
+    const die = this.dice[id];
+    console.log(die);
+    this.dice[id] = {
+      ...die,
+      isHeld: !die.isHeld
+    }
+  }
+
   ngOnInit(): void {
     this.getAllNewDice();
   }

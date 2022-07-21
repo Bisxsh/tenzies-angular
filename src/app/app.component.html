@@ -9,6 +9,7 @@
         <app-dice
         *ngFor="let die of dice;"
         [die]="die"
+        (heldChanged)="dieHeldChanged($event)"
       ></app-dice>
     </span>
 

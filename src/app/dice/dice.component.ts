@@ -12,7 +12,6 @@ export class DiceComponent {
   @Output('heldChanged') eventEmitter: EventEmitter<any> = new EventEmitter<any>();
 
   toggleHoldDice() {
-    console.log(this.die);
     this.eventEmitter.emit({ id: this.die.id });
   }
 
