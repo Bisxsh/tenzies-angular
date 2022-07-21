@@ -2,9 +2,10 @@
   background: #F5F5F5;
   border-radius: 10px;
   margin: 30px 20px 30px 20px;
-  padding: 35px;
+  padding: 2vh;
   text-align: center;
   aspect-ratio: 1 / 1;
+  width: 50vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -13,7 +14,7 @@
 
 .app--heading {
   margin: 30px 30px 0 30px;
-
+  font-size: 2rem;
  }
 
 .app--description {
@@ -21,7 +22,7 @@
   font-weight: 400;
   letter-spacing: -0.03em;
   margin: 5px 20px 0 20px;
-  max-width: 40vw;
+  max-width: 50vw;
 
   color: #4A4E74;
 }
@@ -30,8 +31,8 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-gap: 18px;
-  margin-top: 3vh;
+  grid-gap: 1vw;
+  margin: 3vh 1vh 0 1vh;
 }
 
 .app--button {
@@ -46,7 +47,7 @@
   margin-top: 2vh;
 
   padding: 20px 10vw;
-  font-size: 16px;
+  font-size: 1.5rem;
   line-height: 19px;
 
   color: #FFFFFF;
@@ -58,4 +59,49 @@
 
 .app--button:active {
   background: #271b75;
+}
+
+@media only screen and (max-width: 425px) {
+  .app--container{
+    padding: 1vh;
+    width: auto;
+    max-height: 50vh;
+  }
+  .app--heading {
+    font-size: 2rem;
+  }
+
+  .app--description{
+    font-size: 1rem;
+  }
+
+  .app--button {
+    font-size: 1rem;
+    padding: 1vh 10vw;
+  }
+}
+
+@media only screen and (min-width: 950px) {
+  .app--heading {
+    font-size: 4rem;
+  }
+  .app--description{
+    font-size: 2rem;
+  }
+  .app--button{
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1990px) {
+  .app--heading {
+    font-size: 5rem;
+  }
+  .app--description{
+    font-size: 3rem;
+  }
+  .app--button{
+    font-size: 3rem;
+    padding: 3vh 10vw;
+  }
 }
