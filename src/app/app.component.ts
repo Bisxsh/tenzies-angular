@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Die} from "./utility/die";
+import launchConfetti from './utility/launchConfetti'
 
 @Component({
   selector: 'app-root',
@@ -42,6 +43,7 @@ export class AppComponent implements OnInit{
       if (d.value != firstVal) return false;
     }
 
+    launchConfetti();
     return true;
   }
 
@@ -52,12 +54,7 @@ export class AppComponent implements OnInit{
       ...die,
       isHeld: !die.isHeld
     }
-    // console.log(this.won);
-    console.log(this.hasWon())
-    // console.log(this.dice[0] == null);
-    // console.log(this.dice.filter(d => d.value==this.dieVal).length)
-    // console.log(this.dice.filter(d => d.value==this.dieVal).length==10)
-
+    this.hasWon()
   }
 
   ngOnInit(): void {
