@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Die} from "./utility/die";
-import launchConfetti from './utility/launchConfetti'
+import { launchConfetti, cancelConfetti } from './utility/launchConfetti'
 
 @Component({
   selector: 'app-root',
@@ -10,9 +10,12 @@ import launchConfetti from './utility/launchConfetti'
 export class AppComponent implements OnInit{
   title = 'tenzies';
 
-  dice: Die[] = []
+  dice: Die[] = [];
+  won!: boolean;
 
   getAllNewDice() {
+    this.won=false;
+    cancelConfetti()
     for(let i = 0; i < 10; i++) {
       this.dice[i] = {
         id: i,
@@ -27,6 +30,11 @@ export class AppComponent implements OnInit{
       if (this.dice[i].isHeld) continue;
       this.dice[i].value = (Math.ceil(Math.random() * 6));
     }
+  }
+
+  handleClick(event: any) {
+    console.log(event.textContent)
+    event.textContent === ' Roll ' ? this.rollDice() : this.getAllNewDice();
   }
 
   areDiceSame() {
@@ -48,13 +56,15 @@ export class AppComponent implements OnInit{
   }
 
   dieHeldChanged(data: any) {
+    if (this.won) return;
+
     const { id } = data;
     const die = this.dice[id];
     this.dice[id] = {
       ...die,
       isHeld: !die.isHeld
     }
-    this.hasWon()
+    this.won = this.hasWon();
   }
 
   ngOnInit(): void {

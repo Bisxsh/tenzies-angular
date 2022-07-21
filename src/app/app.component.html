@@ -13,7 +13,9 @@
       ></app-dice>
     </span>
 
-    <button class="app--button" type="button" (click)="rollDice()">Roll</button>
+    <button class="app--button" type="button" (click)="handleClick($event.target)">
+      {{won ? "Play Again" : "Roll"}}
+    </button>
 
   </div>
 </main>
