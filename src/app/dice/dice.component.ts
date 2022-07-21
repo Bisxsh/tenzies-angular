@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import { Die } from "../utility/die";
 
 @Component({
   selector: 'app-dice',
@@ -7,12 +8,12 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class DiceComponent {
 
-  @Input() value !: number;
-  isHeld !: boolean;
+  @Input() die !: Die;
+  @Output('heldChanged') eventEmitter: EventEmitter<any> = new EventEmitter<any>();
 
   toggleHoldDice() {
-    this.isHeld = !this.isHeld;
-    console.log(this.isHeld)
+    console.log(this.die);
+    this.eventEmitter.emit({ id: this.die.id });
   }
 
 }

@@ -7,8 +7,8 @@
 
     <span class="app--dice-container">
         <app-dice
-        *ngFor="let die of dice; index as i"
-        [value] = die
+        *ngFor="let die of dice;"
+        [die]="die"
       ></app-dice>
     </span>
 

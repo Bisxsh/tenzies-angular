@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Die} from "./utility/die";
 
 @Component({
   selector: 'app-root',
@@ -8,11 +9,21 @@ import {Component, OnInit} from '@angular/core';
 export class AppComponent implements OnInit{
   title = 'tenzies';
 
-  dice: number[] = []
+  dice: Die[] = []
 
   getAllNewDice() {
     for(let i = 0; i < 10; i++) {
-      this.dice[i] = (Math.ceil(Math.random() * 6));
+      this.dice[i] = {
+        id: i,
+        value: (Math.ceil(Math.random() * 6)),
+        isHeld: false
+      };
+    }
+  }
+
+  rollDice() {
+    for(let i = 0; i < 10; i++) {
+      this.dice[i].value = (Math.ceil(Math.random() * 6));
     }
   }
 

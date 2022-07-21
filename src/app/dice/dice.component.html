@@ -1,3 +1,3 @@
-<div [ngClass]="'dice--container '+(isHeld ? 'held' : '')" (click)="toggleHoldDice()">
-  {{ value }}
+<div [ngClass]="'dice--container '+(die.isHeld ? 'held' : '')" (click)="toggleHoldDice()">
+  {{ die.value }}
 </div>
